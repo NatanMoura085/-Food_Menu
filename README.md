@@ -5,8 +5,13 @@
   Visitor count<br>
   <img src="https://profile-counter.glitch.me/naveenverma1/count.svg" />
 </p>
-(https://user-images.githubusercontent.com/99056912/219278910-561b0f09-38bc-4abc-889d-608bb207965e.png)
 
+
+<p align-self="center"> 
+  
+![Screenshot_2](https://user-images.githubusercontent.com/99056912/219279515-54bc81d5-df2a-43aa-bb72-6af2bc0ecce4.png)
+  
+</p>
 
 
 
