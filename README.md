@@ -8,7 +8,7 @@
 
 <br>
 
-<p align-self="center"> 
+<p align="center"> 
   
 ![Screenshot_2](https://user-images.githubusercontent.com/99056912/219279515-54bc81d5-df2a-43aa-bb72-6af2bc0ecce4.png)
   
