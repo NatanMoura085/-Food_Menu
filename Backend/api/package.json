@@ -1,19 +1,24 @@
 {
-  "name": "api",
+  "name": "api_restful2.0",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "start": " nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon, ./index.js localhost 3000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "chart.js": "^4.2.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mysql": "^2.18.1",
+    "kafka-node": "^5.0.0",
+    "kafkajs": "^2.2.3",
+    "mongoose": "^6.9.1",
     "nodemon": "^2.0.20"
   }
 }

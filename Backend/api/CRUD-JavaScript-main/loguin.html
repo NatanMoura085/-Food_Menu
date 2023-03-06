@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tela de Login com Autenticação Facial</title>
+  <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@0.23.0/dist/face-api.min.js"></script>
+</head>
+<body>
+  <h1>Tela de Login com Autenticação Facial</h1>
+  <video id="video" width="640" height="480" autoplay muted></video>
+  <button id="capture">Capturar Imagem da Face</button>
+  <form>
+    <label for="username">Nome de usuário:</label>
+    <input type="text" id="username" name="username"><br><br>
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="submit" value="Enviar">
+  </form>
+  <script>
+    async function startVideo() {
+      const video = document.getElementById('video');
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      video.srcObject = stream;
+      await video.play();
+    }
+    
+    async function stopVideo() {
+      const video = document.getElementById('video');
+      const stream = video.srcObject;
+      const tracks = stream.getTracks();
+      
+      tracks.forEach(track => {
+        track.stop();
+      });
+      
+      video.srcObject = null;
+    }
+    
+    async function captureFace() {
+      const video = document.getElementById('video');
+      const canvas = document.createElement('canvas');
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+      const img = await faceapi.createCanvasFromMedia(canvas);
+      const detections = await faceapi.detectAllFaces(img);
+      
+      if (detections.length === 1) {
+        alert('Imagem da face capturada!');
+        const faceDataUrl = canvas.toDataURL('image/png');
+        const faceInput = document.createElement('input');
+        faceInput.type = 'hidden';
+        faceInput.name = 'face';
+        faceInput.value = faceDataUrl;
+        document.querySelector('form').appendChild(faceInput);
+        stopVideo();
+      } else {
+        alert('Erro ao capturar imagem da face. Tente novamente.');
+      }
+    }
+    
+    async function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      if (!username || !password) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+      
+      const faceInput = document.querySelector('input[name="face"]');
+      
+      if (!faceInput || !faceInput.value) {
+        alert('Por favor, capture uma imagem da face.');
+        return;
+      }
+      
+      const img = await faceapi.bufferToImage(faceInput.value);
+      const detections = await faceapi.detectAllFaces(img);
+      
+      if (detections.length === 1) {
+        alert('Usuário autenticado!');
+        window.location.href = 'path/to/authorized/page.html';
+      } else {
+        alert('Erro na autenticação. Tente novamente.');
+      }
+    }
+    
+    document.getElementById('capture').addEventListener('click', () => {
+      captureFace();
+    });
+    
+    document.querySelector('form').addEventListener('submit', (event) => {
+event.preventDefault();
+login();
+});
+
+startVideo();
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Menu De Cardápio</title>
+</head>
+<body>
+    <header>
+        <span>Star Burguer <b></b></span>
+      </header>
+      <main>
+        <div class="page-title">
+          <ul class="category-list" >
+            <li ><a href="#" data-category="pizza"><img src="pizza.png" alt=""> <p>Pizza</p></a></li>
+            <li ><a href="#" data-category="Hambuguer"><img src="pizza.png" alt=""><p>Hambuguer</p></a></li>
+            <li ><a href="#"data-category="Sushi"><img src="pizza.png" alt=""><p>Sushi</p></a></li>
+            <li><a href="#" data-category="Mexicana"><img src="pizza.png" alt=""><p>Mexicana</p></a></li>
+          </ul>
+        </div>
+        </div>
+        <div class="content">
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th>Preço</th>
+                  <th>Quantidade</th>
+                  <th>Total</th>
+                  <th>-</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td >
+                    <div class="product">
+                      <img src="https://picsum.photos/100/120" alt="" />
+                      <div class="info">
+                        <div class="name">Nome do produto</div>
+                        <div class="category">Descrição</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="money">R$ 720</td>
+                  <td>
+                    <div class="qty">
+                      <button id="btn-minus"><i class="bx bx-minus"></i></button>
+                      <span id="num">0</span>
+                      <button id="btn-plus"><i class="bx bx-plus"></i></button>
+                      
+                    </div>
+                  </td>
+                  <td>R$ 740</td>
+                  <td>
+                    <button class="remove"><i class="bx bx-x"></i></button>
+                  </td>
+                </tr>
+                <tr class="menu-item pizza">
+                  <td>
+                    <div class="product">
+                      <img src="https://picsum.photos/100/120" alt="" />
+                      <div class="info" >
+                        <div class="name">Nome do produto</div>
+                        <div class="category">Categoria</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>R$ 920</td>
+                  <td>
+                    <div class="qty" class="menu-item">
+                      <button id="btn-minus" class="menu-item"><i class="bx bx-minus"></i></button>
+                      <span id="num" class="menu-item">2</span>
+                      <button id="btn-plus" class="menu-item"><i class="bx bx-plus"></i></button>                      
+                    </div>
+                  </td>
+                  <td class="menu-item">R$ 640</td>
+                  <td>
+                    <button class="remove" class="menu-item"><i class="bx bx-x"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="product" class="menu-item ">
+                      <img src="https://picsum.photos/100/120" alt="" />
+                      <div class="info">
+                        <div class="name">Nome do produto</div>
+                        <div class="category">Categoria</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>R$ 170</td>
+                  <td>
+                    <div class="qty">
+                      <button id="btn-minus"><box-icon name='minus'></box-icon></button>
+                      <span id="num">2</span>
+                      <button id="btn-plus"><i class="bx bx-plus"></i></button>
+                      
+                    </div>
+                  </td>
+                  <td>R$ 277</td>
+                  <td>
+                    <button class="remove"><i class="bx bx-x"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="product" class="menu-item ">
+                      <img src="https://picsum.photos/100/120" alt="" />
+                      <div class="info">
+                        <div class="name">Nome do produto</div>
+                        <div class="category">Categoria</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>R$ 170</td>
+                  <td>
+                    <div class="qty">
+                      <button id="btn-minus"><box-icon name='minus'></box-icon></button>
+                      <span id="num">2</span>
+                      <button id="btn-plus"><i class="bx bx-plus"></i></button>
+                      
+                    </div>
+                  </td>
+                  <td>R$ 277</td>
+                  <td>
+                    <button class="remove"><i class="bx bx-x"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <aside>
+            <div class="box">
+              <header>Resumo da compra</header>
+              <div class="info">
+                <div><span>Sub-total</span><span>R$ 498</span></div>
+                <div><span>Frete</span><span>Gratuito</span></div>
+                <div>
+                  <button>
+                    Adicionar cupom de desconto
+                    <i class="bx bx-right-arrow-alt"></i>
+                  </button>
+                </div>
+              </div>
+              <footer>
+                <span>Total</span>
+                <span>R$ 418</span>
+              </footer>
+            </div>
+            <button>Finalizar Compra</button>
+          </aside>
+        </div>
+    </main>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="../JavaScripts/main.js"></script>
+   
+</body>
+</html>
